@@ -5,8 +5,12 @@ Uses simple locale style like `en` or `de` .. more complex (`en-US`) style may f
 The gem includes a seed file with most common european locales. 
 
 
+## Usage
+...
 
 
+## ToDo's
+add docu ...
 
 
 
