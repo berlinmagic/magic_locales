@@ -1,5 +1,5 @@
 # encoding: utf-8
-class SpokenLanguage < ActiveRecord::Base
+class MagicLocales::Language < ActiveRecord::Base
   
   # =====> R E W R I T E S <================================================================= #
   MODEL_PARAMS = [ :id, :locale_id, :level, :_destroy ]

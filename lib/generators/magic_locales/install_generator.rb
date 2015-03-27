@@ -17,11 +17,11 @@ module MagicLocales
       end
 
       def copy_migrations
-        migration_template( "magic_locales_migration.rb", "db/migrate/add_magic_locales.rb" )
+        migration_template( "magic_logales_migration.rb", "db/migrate/add_magic_locales.rb" )
       end
       
       def create_seeds_folder
-        directory( "db/seeds" )
+        empty_directory( "db/seeds" )
       end
       
       desc "add country-seed file"

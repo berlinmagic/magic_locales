@@ -1,5 +1,5 @@
 # encoding: utf-8
-module MagicAddresses
+module MagicLocales
   module Association
   
     def self.included(base)
