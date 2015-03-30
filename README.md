@@ -22,11 +22,23 @@ The gem includes a seed file with most common european locales.
 ```
 
 
+### Controller-Helper
+- in your application controller: 
+```ruby
+  ...
+  include MagicLocaleHelper
+  before_action :get_user_language
+  ...
+```
+
+`include MagicLocaleHelper` loads in the helper and `before_action :get_user_language` checks user language *(via db-field or accept-language)* .. now you can access your users `@accept_language`.
+
+
 
 
 
 ## ToDo's
-add docu ...
+add more docu ...
 
 
 
