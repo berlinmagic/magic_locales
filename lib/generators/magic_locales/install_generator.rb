@@ -5,8 +5,9 @@ module MagicLocales
     class InstallGenerator < ::Rails::Generators::Base
       include Rails::Generators::Migration
       source_root File.expand_path('../templates', __FILE__)
-      desc "add magic_locales migrations"
 
+
+      desc "add magic_locales migrations"
       def self.next_migration_number(path)
         unless @prev_migration_nr
           @prev_migration_nr = Time.now.utc.strftime("%Y%m%d%H%M%S").to_i
@@ -24,7 +25,7 @@ module MagicLocales
         empty_directory( "db/seeds" )
       end
       
-      desc "add country-seed file"
+      desc "add locale-seed file"
       def copy_country_seeds
         copy_file( "locale_seeds.rb", "db/seeds/locales.rb" )
       end
@@ -34,7 +35,7 @@ module MagicLocales
       # =>   copy_file( "magic_initializer.rb", "config/initializers/magic_addresses.rb" )
       # => end
       
-      desc "add magic_addresses routes"
+      desc "add magic_locales routes"
       def copy_mgca_routes
         route <<-ROUTE
 
