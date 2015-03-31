@@ -37,6 +37,26 @@ The gem includes a seed file with most common european locales.
 
 
 
+#### Features
+
+- Seed-file for this languages
+```ruby
+  bg, cs, da, nl, en, fi, fr, de, el, hr, hu, it, pl, pt, ru, es, sv, uk
+```
+- each translated in:
+```ruby
+  cs, de, en, es, fr, it, pl, ru
+```
+- locale switch helper (only visible, if more than 1 locale is live)
+```ruby
+  <%= render "magic_locales/locale_switch" %>
+```
+- helper to show fields for each active language (globalize helper)
+```ruby
+  <%= f.globalize_fields_for lc do |g| %>
+    # ..
+  <% end %>
+```
 
 #### License
 This project rocks and uses MIT-LICENSE.
