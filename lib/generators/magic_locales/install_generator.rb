@@ -34,21 +34,20 @@ module MagicLocales
       # =>   copy_file( "magic_initializer.rb", "config/initializers/magic_addresses.rb" )
       # => end
       
-# =>       desc "add magic_addresses routes"
-# =>       def copy_mgca_routes
-# =>         route <<-ROUTE
-# => 
-# =>   scope :mgca, module: :magic_addresses do
-# =>     resources :countries, only: :index
-# =>     resources :states, only: :index
-# =>     resources :cities, only: :index
-# =>     resources :districts, only: :index
-# =>     resources :subdistricts, only: :index
-# =>     get "/" => "countries#index"
-# =>   end
-# => 
-# =>         ROUTE
-# =>       end
+      desc "add magic_addresses routes"
+      def copy_mgca_routes
+        route <<-ROUTE
+
+  scope :mgclang, module: :magic_locales do
+    resources :locales do
+      get "trigger/:state", action: :trigger, on: :member, as: :trigger
+    end
+    get "/" => "locales#index"
+  end
+  get "/change-locale/:locale", controller: "magic_locales/locales", action: :change_locale, as: :change_locale
+
+        ROUTE
+      end
       
       
       

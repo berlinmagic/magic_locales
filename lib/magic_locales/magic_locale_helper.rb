@@ -45,6 +45,7 @@ module MagicLocaleHelper
     end
     
     
+    
   end
 
   def self.included(receiver)

@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+
   
+  scope :mgclang, module: :magic_locales, as: :mgclang do
+    resources :locales do
+      get "trigger/:state", action: :trigger, on: :member, as: :trigger
+    end
+    get "/" => "locales#index"
+  end
+  get "/change-locale/:locale", controller: "magic_locales/locales", action: :change_locale, as: :change_locale
+
+
   root 'pages#start'
   
   # The priority is based upon order of creation: first created -> highest priority.

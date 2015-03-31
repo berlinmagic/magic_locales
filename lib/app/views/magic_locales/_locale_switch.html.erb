@@ -1,0 +1,39 @@
+<% tag ||= :div %>
+<% css_class ||= "" %>
+<% show_name ||= false %>
+<% show_arrow ||= false %>
+
+<%# if CONFIG[:allow_locale_change] %>
+<% if system_locales.count > 1 %>
+  
+  <%= content_tag tag, class: "dropdown #{css_class}" do %>
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <%= flag() %> 
+      <%#= t("language", locale: I18n.locale.to_s) if show_name %> 
+      <%= get_system_locales.where(iso_code: I18n.locale.to_s).any? ? get_system_locales.where(iso_code: I18n.locale.to_s).first.natural_name : t("language", locale: I18n.locale.to_s) if show_name %>
+      <%= raw('<b class="caret"></b>') if show_arrow %>
+    </a>
+    <ul class="dropdown-menu">
+      <%# CONFIG[:app_locales].each do |lcl| %>
+      <% if 3 == 4 %>
+      <% system_locales.each do |lcl| %>
+        <% if I18n.available_locales.include?(lcl.to_sym) %>
+          <li>
+            <a href="<%= change_locale_path(lcl, back: url_for(locale:nil)) %>"><%= flag(lcl) %> <%= t("language", locale: lcl) %></a>
+          </li>
+        <% end %>
+      <% end %>
+      <% end %>
+      
+      <% get_system_locales.each do |lcl| %>
+        <% if I18n.available_locales.include?(lcl.iso_code.to_sym) %>
+          <li>
+            <a href="<%= change_locale_path(lcl.iso_code, back: url_for(locale:nil)) %>"><%= flag(lcl.iso_code) %> <%= lcl.natural_name %></a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+  
+<% end %>
+

@@ -1,0 +1,20 @@
+<% system_locales.each do |lc| %>
+  <%= f.globalize_fields_for lc do |g| %>
+    <div class="row">
+      <div class="col-sm-5">
+        <%= g.label :name do %>
+          <%= locale_flag lc %> Name (<%= lc %>)
+        <% end %>
+      </div>
+      <div class="col-sm-7">
+        <% if (lc == I18n.locale.to_s) && f.object.errors.any? && f.object.errors.keys.include?(:name) %>
+          <div class="field_with_errors">
+            <%= g.text_field :name, class: "form-control" %>
+          </div>
+        <% else %>
+          <%= g.text_field :name, class: "form-control" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

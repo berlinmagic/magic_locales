@@ -1,0 +1,83 @@
+<%#= wizard_wrapper do %>
+<div class="section">
+  <div class="corset full">
+    
+        <div class="box setting">
+          <div class="header">
+            <%= link_to "New Locale", url_for( controller: "magic_locales/locales", action: :new), class: "btn btn-success pull-right btn-sm", data: { toggle: "modal", target: "#appModal" } %>
+            <i class="magicons-user-group-round"></i> <%= t("activerecord.attributes.wizard_locale.other") %>
+          </div>
+          <div class="body">
+            <h4>
+              <strong>Available Locales:</strong>
+              <% I18n.available_locales.each do |al| %>
+                <span class="label label-default"><%= al %></span>
+              <% end %>
+            </h4>
+            <div class="clearfix"></div>
+            <hr/>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ISO-Code</th>
+                  <th>Name</th>
+                  <th>State</th>
+                  <th>Available?</th>
+                  <th>Triggers</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @locales.each do |locale| %>
+                <% if locale.locale_state == "live" && I18n.available_locales.include?(locale.iso_code.to_sym) %>
+                  <% trclass = "success" %>
+                <% elsif locale.locale_state == "active" && I18n.available_locales.include?(locale.iso_code.to_sym) %>
+                  <% trclass = "info" %>
+                <% elsif locale.locale_state == "inactive" && I18n.available_locales.include?(locale.iso_code.to_sym) %>
+                  <% trclass = "warning" %>
+                <% elsif (locale.locale_state == "active" || locale.locale_state == "live") && !I18n.available_locales.include?(locale.iso_code.to_sym) %>
+                  <% trclass = "danger" %>
+                <% else %>
+                  <% trclass = "" %>
+                <% end %>
+                <tr class="<%= trclass %>">
+                  <td>
+                    <%= locale_flag( locale.iso_code, "small" ) %>
+                    <%= locale.iso_code %>
+                    <% if I18n.default_locale.to_s == locale.iso_code %>
+                      &nbsp;&nbsp; 
+                      <span class="label label-success">main</span>
+                    <% end %>
+                  </td>
+                  <td><strong><%= locale.name %></strong></td>
+                  <td><%= t("helpers.label.wizard_locale.states.#{locale.locale_state}") %></td>
+                  <td>
+                    <% if I18n.available_locales.include?(locale.iso_code.to_sym) %>
+                      <span class="text-success">Yeah!</span>
+                    <% else %>
+                      <span class="text-danger">Not Available!</span>
+                    <% end %>
+                  </td>
+                  <td>
+                    <% %w(activate release deactivate).each do |state| %>
+                      <% if locale.state.trigger?(state.to_sym) %>
+                        <%= link_to state.to_s.titleize, url_for( controller: "magic_locales/locales", action: :trigger, id: locale, state: state), class: "btn btn-default btn-sm" %>
+                      <% end %>
+                    <% end %>
+                  </td>
+                  <td>
+                    <%= link_to "edit", url_for( controller: "magic_locales/locales", action: :edit, id: locale), class: "btn btn-default btn-sm", data: { toggle: "modal", target: "#appModal" } %>
+                  </td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  
+  <br/>
+  <br/>
+  
+  </div>
+</div>
+<%# end %>

@@ -1,0 +1,47 @@
+<%# path = @locale.id.present? ? mgclang_locale_path(@locale) : mgclang_locales_path %>
+<% path = @locale.id.present? ? url_for( controller: "magic_locales/locales", action: :update, id: @locale) : url_for( controller: "magic_locales/locales", action: :create ) %>
+
+<%= form_for @locale, url: path  do |f| %>
+
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="appModalLabel">locale</h4>
+  </div>
+  <div class="modal-body">
+    
+    <div class="row">
+      <div class="col-sm-5">
+        <%= f.label :iso_code %>
+      </div>
+      <div class="col-sm-7">
+        <%= f.text_field :iso_code, class: "form-control" %>
+      </div>
+    </div>
+    
+    <% if 3 == 4 %>
+    <div class="row">
+      <div class="col-sm-5">
+        <%= f.label :name %>
+      </div>
+      <div class="col-sm-7">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <% end %>
+    
+    <br/>
+    
+    <%= render "globalized_name_fields", f: f %>
+    
+    <%#= render "wizard/shared/globalized_name", f: f %>
+    
+    
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal"><%= t("buttons.close") %></button>
+    <%= f.submit t("buttons.save", default: "Save"), data: { disable_with: 'Submiting...' }, class: "btn btn-primary" %>
+  </div>
+  
+  
+  
+<% end %>
