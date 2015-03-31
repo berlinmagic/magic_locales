@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency      "globalize",      ">= 5.0"
   s.add_runtime_dependency      "micromachine",   ">= 1.1"
 
-  s.add_development_dependency  "sqlite3"
-  s.add_development_dependency  "rspec-rails"
+  s.add_development_dependency  "sqlite3",        '~> 3.2'
+  s.add_development_dependency  "rspec-rails",    '~> 1.3'
 
 end
