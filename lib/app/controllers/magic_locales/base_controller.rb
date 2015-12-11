@@ -3,7 +3,7 @@ class MagicLocales::BaseController < ApplicationController
   
   # => layout proc { |controller| controller.request.xhr? ? false : "application" }
   
-  before_action :authenticate_visitor
+  before_action :authenticate_visitor, except: [:change_locale]
   
   
   private

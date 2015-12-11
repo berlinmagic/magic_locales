@@ -8,7 +8,7 @@ class MagicLocales::Language < ActiveRecord::Base
   LEVELS = %w(basic medium advanced excelent) # => and 'native'
   
   # =====> A S S O Z I A T I O N S <========================================================= #
-  belongs_to :user,     class_name: "User",             foreign_key: :user_id
+  belongs_to :owner,    polymorphic: true
   belongs_to :locale,   class_name: "Wizard::Locale",   foreign_key: :locale_id
   
   
