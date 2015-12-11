@@ -3,6 +3,7 @@ de:
     available_locales: "Verfügbare Sprachen"
     available_locales_helper: "Sprachen die als *.yml Datei im System vorliegen, Fragen Sie Ihren Admin für mehr Informationen."
     main_locale: "Master"
+    active_locale: "Aktiv"
     trigger: "Optionen"
     available: "Verfügbar"
     actions: "Aktionen"
@@ -14,6 +15,10 @@ de:
       release: "Veröffentlichen"
       deactivate: "Deaktivieren"
     edit: "bearbeiten"
+    state_descriptions:
+      live: "Sprache ist Online, das heißt genrell verfügbar und sichtbar. Wenn mehr als eine Sprache Online sind, wird der Sprach-Wechsler sichtbar."
+      active: "Sprache ist aktiv, das heißt sie ist nicht sichtbar aber wird im hintergrund schon vom System verwendet. (zur Vorbereitung)"
+      incatvie: "Sprache ist Inaktiv, also weder sichtbar noch in verwendung."
   helpers:
     label:
       language:

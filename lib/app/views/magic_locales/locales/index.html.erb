@@ -16,14 +16,22 @@
   </h4>
   <p><%= t("magic_locales.available_locales_helper") %></p>
   <div class="clearfix"></div>
+  <table class="table table-condensed">
+    <% %w(live active inactive).each do |this| %>
+    <tr>
+      <th><%= t("helpers.label.magic_locales_locale.states.#{this}") %></th>
+      <td><%= t("magic_locales.state_descriptions.#{this}") %></td>
+    </tr>
+    <% end %>
+  </table>
   <hr/>
   <table class="table table-striped">
     <thead>
       <tr>
         
-        <th><%= t("helpers.label.magic_locales_language.iso_code") %></th>
-        <th><%= t("helpers.label.magic_locales_language.name") %></th>
-        <th><%= t("helpers.label.magic_locales_language.locale_state") %></th>
+        <th><%= t("helpers.label.magic_locales_locale.iso_code") %></th>
+        <th><%= t("helpers.label.magic_locales_locale.name") %></th>
+        <th><%= t("helpers.label.magic_locales_locale.locale_state") %></th>
         <th><%= t("magic_locales.available") %></th>
         <th><%= t("magic_locales.trigger") %></th>
         <th><%= t("magic_locales.actions") %></th>
@@ -50,10 +58,14 @@
         </td>
         <td><strong><%= locale.name %></strong></td>
         <td>
-          <%= t("helpers.label.magic_locales_language.states.#{locale.locale_state}") %>
+          <%= t("helpers.label.magic_locales_locale.states.#{locale.locale_state}") %>
           <% if I18n.default_locale.to_s == locale.iso_code %>
             &nbsp;&nbsp; 
             <span class="label label-success"><%= t("magic_locales.main_locale") %></span>
+          <% end %>
+          <% if I18n.locale.to_s == locale.iso_code %>
+            &nbsp;&nbsp; 
+            <span class="label label-success"><%= t("magic_locales.active_locale") %></span>
           <% end %>
         </td>
         <td>
