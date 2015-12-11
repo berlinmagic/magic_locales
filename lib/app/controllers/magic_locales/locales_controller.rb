@@ -1,9 +1,6 @@
 # encoding: utf-8
 class MagicLocales::LocalesController < MagicLocales::BaseController
   
-  # => layout proc { |controller| controller.request.xhr? ? 'xhr' : get_layout }
-  layout proc { |controller| controller.request.xhr? ? false : "application" }
-  
   def index
     # => @locales = ::MagicLocales::Locale.includes(:translations).with_translations(I18n.locale).order( 'mgclang_locale_translations.name ASC' )
     @locales = MagicLocales::Locale.where(locale_state: "live").includes(:translations).with_translations(I18n.locale).order( 'mgclang_locale_translations.name ASC' )
