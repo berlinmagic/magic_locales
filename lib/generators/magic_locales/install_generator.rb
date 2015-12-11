@@ -30,10 +30,10 @@ module MagicLocales
         copy_file( "locale_seeds.rb", "db/seeds/locales.rb" )
       end
       
-      # => desc "add magic_addresses initialitzer"
-      # => def copy_mgca_initialitzer
-      # =>   copy_file( "magic_initializer.rb", "config/initializers/magic_addresses.rb" )
-      # => end
+      desc "add magic_logales initialitzer"
+      def copy_mgca_initialitzer
+        copy_file( "magic_initializer.rb", "config/initializers/magic_logales.rb" )
+      end
       
       desc "add magic_locales routes"
       def copy_mgca_routes

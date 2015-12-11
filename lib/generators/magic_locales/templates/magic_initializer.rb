@@ -2,6 +2,7 @@
 ## Need authentication for locale admin routes use this:
 ##
 # => MagicLocales::BaseController.class_eval do 
+# =>   # layout proc { |controller| controller.request.xhr? ? false : "application" }
 # =>   private
 # =>     # overwrite authentication method
 # =>     def authenticate_visitor
