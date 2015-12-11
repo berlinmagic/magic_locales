@@ -2,7 +2,7 @@ en:
   magic_locales:
     available_locales: "Verfügbare Sprachen"
     available_locales_helper: "Locales that are available as *.yml files in the system, ask your admin for more informations."
-    main_locale: "main"
+    default_locale: "default"
     active_locale: "active"
     trigger: "triggers"
     available: "available"
@@ -16,9 +16,9 @@ en:
       deactivate: "deactivate"
     edit: "edit"
     state_descriptions:
-      live: "Language is live, so available. When more then one language is live, the language-selector gets visble."
-      active: "Language is active, so not available but allready used by the system (for preparation)."
-      incatvie: "Language is inactive, so not available and not in use."
+      live: "Language is live, so available.<br/>When more then one language is live, the language-selector gets visble."
+      active: "Language is active, so not available but allready used by the system.<br/>(for preparation)"
+      incative: "Language is inactive, so not available and not in use."
   helpers:
     label:
       language:
