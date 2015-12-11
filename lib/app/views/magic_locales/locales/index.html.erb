@@ -9,20 +9,23 @@
 
 
   <h4>
-    <strong><%= t("magic_locales.available_locales") %></strong>
-    <% I18n.available_locales.each do |al| %>
-      <span class="label label-default"><%= al %></span>
+    <strong><%= t("magic_locales.available_locales") %></strong> 
+    <% I18n.available_locales.each do |lang| %>
+      <%= locale_flag( "#{lang}", "small" ) %>
     <% end %>
   </h4>
-  <p><%= t("magic_locales.available_locales_helper") %></p>
   <div class="clearfix"></div>
   <table class="table table-condensed">
     <% %w(live active inactive).each do |this| %>
-    <tr>
-      <th><%= t("helpers.label.magic_locales_locale.states.#{this}") %></th>
-      <td><%= t("magic_locales.state_descriptions.#{this}") %></td>
-    </tr>
+      <tr>
+        <th><%= t("helpers.label.magic_locales_locale.states.#{this}") %></th>
+        <td><%= t("magic_locales.state_descriptions.#{this}") %></td>
+      </tr>
     <% end %>
+    <tr>
+      <th><%= t("magic_locales.available") %>*</th>
+      <td><%= t("magic_locales.available_locales_helper") %></td>
+    </tr>
   </table>
   <hr/>
   <table class="table table-striped">
