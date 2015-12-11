@@ -18,7 +18,7 @@ en:
     state_descriptions:
       live: "Language is live, so available.<br/>When more then one language is live, the language-selector gets visble."
       active: "Language is active, so not available but allready used by the system.<br/>(for preparation)"
-      incative: "Language is inactive, so not available and not in use."
+      inactive: "Language is inactive, so not available and not in use."
   helpers:
     label:
       language:

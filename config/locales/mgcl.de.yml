@@ -18,7 +18,7 @@ de:
     state_descriptions:
       live: "Sprache ist Online, das heißt genrell verfügbar und sichtbar.<br/>Wenn mehr als eine Sprache Online sind, wird der Sprach-Wechsler sichtbar."
       active: "Sprache ist aktiv, das heißt sie ist nicht sichtbar aber wird im hintergrund schon vom System verwendet.<br/>(Wird zur Vorbereitung verwendet)"
-      incative: "Sprache ist Inaktiv, also weder sichtbar noch in verwendung."
+      inactive: "Sprache ist Inaktiv, also weder sichtbar noch in verwendung."
   helpers:
     label:
       language:

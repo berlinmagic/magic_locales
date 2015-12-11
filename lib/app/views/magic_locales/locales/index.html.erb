@@ -37,6 +37,7 @@
     <thead>
       <tr>
         
+        <th><i class="icomoon-image"></i></th>
         <th><%= t("helpers.label.magic_locales_locale.iso_code") %></th>
         <th><%= t("helpers.label.magic_locales_locale.name") %></th>
         <th><%= t("helpers.label.magic_locales_locale.locale_state") %></th>
@@ -60,8 +61,11 @@
         <% trclass = "" %>
       <% end %>
       <tr class="<%= trclass %>">
+        
         <td>
           <%= locale_flag( locale.iso_code, "small" ) %>
+        </td>
+        <td>
           <%= locale.iso_code %>
         </td>
         <td><strong><%= locale.name %></strong></td>
