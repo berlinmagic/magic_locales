@@ -86,14 +86,10 @@
           <% end %>
         </td>
         <td>
-          <% %w(activate release deactivate).each do |state| %>
-            <% if locale.state.trigger?(state.to_sym) %>
-              <%= link_to t("magic_locales.triggers.#{state}"), url_for( controller: "magic_locales/locales", action: :trigger, id: locale, state: state), class: "btn btn-default btn-sm" %>
-            <% end %>
-          <% end %>
+          <%= render "magic_locales/admin_triggers", locale: locale %>
         </td>
         <td>
-          <%= link_to t("magic_locales.edit"), url_for( controller: "magic_locales/locales", action: :edit, id: locale), class: "btn btn-default btn-sm", data: { toggle: "modal", target: "#appModal" } %>
+          <%= render "magic_locales/admin_actions", locale: locale %>
         </td>
       </tr>
     <% end %>
