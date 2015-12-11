@@ -1,4 +1,19 @@
 de:
+  magic_locales:
+    available_locales: "Verfügbare Sprachen"
+    available_locales_helper: "Locales that are available as *.yml files in the system, ask your admin for more informations."
+    main_locale: "main"
+    trigger: "triggers"
+    available: "available"
+    actions: "Actions"
+    availables:
+      "true": "Yes"
+      "false": "NO!"
+    triggers:
+      activate: "activate"
+      release: "release"
+      deactivate: "deactivate"
+    edit: "edit"
   helpers:
     label:
       language:
@@ -19,6 +34,10 @@ de:
         natural_name: "Natural"
         iso_code: "ISO-Code"
         locale_state: "State"
+        states:
+          inactive: "Inactive"
+          active: "Active"
+          live: "Online"
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
     placeholder:
       choose_language: "Choose language"

@@ -42,7 +42,8 @@ ActiveSupport.on_load(:active_record) do
   require 'micromachine'
 end
 
-ActionController::Base.prepend_view_path File.expand_path '../app/views', __FILE__
+# ActionController::Base.prepend_view_path File.expand_path '../app/views', __FILE__
+ActionController::Base.append_view_path File.expand_path '../app/views', __FILE__
 
 ActiveRecord::Base.send :include, MagicLocales::Association
 

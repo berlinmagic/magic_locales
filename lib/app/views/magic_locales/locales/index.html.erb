@@ -2,29 +2,32 @@
 
   <%= content_for :headline do %>
     
-    <%= link_to "New Locale", url_for( controller: "magic_locales/locales", action: :new), class: "btn btn-success pull-right btn-sm", data: { toggle: "modal", target: "#appModal" } %> 
-    <i class="magicons-user-group-round"></i> <%= t("activerecord.attributes.wizard_locale.other") %>
+    <%= link_to "+ #{t("activerecord.attributes.magic_locales_locale.one")}", url_for( controller: "magic_locales/locales", action: :new), class: "btn btn-success pull-right btn-sm", data: { toggle: "modal", target: "#appModal" } %> 
+    <i class="icon-bubbles"></i> <%= t("activerecord.attributes.magic_locales_locale.other") %>
     
   <% end %>
 
 
   <h4>
-    <strong>Available Locales:</strong>
+    <strong><%= t("magic_locales.available_locales") %></strong>
     <% I18n.available_locales.each do |al| %>
       <span class="label label-default"><%= al %></span>
     <% end %>
   </h4>
+  <p><%= t("magic_locales.available_locales_helper") %></p>
   <div class="clearfix"></div>
   <hr/>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>ISO-Code</th>
-        <th>Name</th>
-        <th>State</th>
-        <th>Available?</th>
-        <th>Triggers</th>
-        <th>Actions</th>
+        
+        <th><%= t("helpers.label.magic_locales_language.iso_code") %></th>
+        <th><%= t("helpers.label.magic_locales_language.name") %></th>
+        <th><%= t("helpers.label.magic_locales_language.locale_state") %></th>
+        <th><%= t("magic_locales.available") %></th>
+        <th><%= t("magic_locales.trigger") %></th>
+        <th><%= t("magic_locales.actions") %></th>
+        
       </tr>
     </thead>
     <tbody>
@@ -44,29 +47,31 @@
         <td>
           <%= locale_flag( locale.iso_code, "small" ) %>
           <%= locale.iso_code %>
-          <% if I18n.default_locale.to_s == locale.iso_code %>
-            &nbsp;&nbsp; 
-            <span class="label label-success">main</span>
-          <% end %>
         </td>
         <td><strong><%= locale.name %></strong></td>
-        <td><%= t("helpers.label.wizard_locale.states.#{locale.locale_state}") %></td>
+        <td>
+          <%= t("helpers.label.magic_locales_language.states.#{locale.locale_state}") %>
+          <% if I18n.default_locale.to_s == locale.iso_code %>
+            &nbsp;&nbsp; 
+            <span class="label label-success"><%= t("magic_locales.main_locale") %></span>
+          <% end %>
+        </td>
         <td>
           <% if I18n.available_locales.include?(locale.iso_code.to_sym) %>
-            <span class="text-success">Yeah!</span>
+            <span class="text-success"><%= t("magic_locales.availables.true") %></span>
           <% else %>
-            <span class="text-danger">Not Available!</span>
+            <span class="text-danger"><%= t("magic_locales.availables.false") %></span>
           <% end %>
         </td>
         <td>
           <% %w(activate release deactivate).each do |state| %>
             <% if locale.state.trigger?(state.to_sym) %>
-              <%= link_to state.to_s.titleize, url_for( controller: "magic_locales/locales", action: :trigger, id: locale, state: state), class: "btn btn-default btn-sm" %>
+              <%= link_to t("magic_locales.triggers.#{state}"), url_for( controller: "magic_locales/locales", action: :trigger, id: locale, state: state), class: "btn btn-default btn-sm" %>
             <% end %>
           <% end %>
         </td>
         <td>
-          <%= link_to "edit", url_for( controller: "magic_locales/locales", action: :edit, id: locale), class: "btn btn-default btn-sm", data: { toggle: "modal", target: "#appModal" } %>
+          <%= link_to t("magic_locales.edit"), url_for( controller: "magic_locales/locales", action: :edit, id: locale), class: "btn btn-default btn-sm", data: { toggle: "modal", target: "#appModal" } %>
         </td>
       </tr>
     <% end %>
