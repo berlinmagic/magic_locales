@@ -1,0 +1,59 @@
+de:
+  helpers:
+    label:
+      language:
+        level: "Niveau"
+        owner: "Besitzer"
+        locale: "Sprache"
+      locale:
+        name: "Name"
+        natural_name: "Natürlich"
+        iso_code: "ISO-Code"
+        locale_state: "Status"
+      magic_locales_language:
+        level: "Niveau"
+        owner: "Besitzer"
+        locale: "Sprache"
+      magic_locales_locale:
+        name: "Name"
+        natural_name: "Natürlich"
+        iso_code: "ISO-Code"
+        locale_state: "Status"
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+    placeholder:
+      choose_language: "Sprache Wählen"
+      spoken_language:
+        choose_language: "Sprache wählen"
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+  activemodel:
+    attributes:
+      language:
+        one: "Sprachkenntniss"
+        other: "Sprachkenntnisse"
+      locale:
+        one: "Sprache"
+        other: "Sprachen"
+      magic_locales_language:
+        one: "Sprachkenntniss"
+        other: "Sprachkenntnisse"
+      magic_locales_locale:
+        one: "Sprache"
+        other: "Sprachen"
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+  activerecord:
+    attributes:
+      language:
+        one: "Sprachkenntniss"
+        other: "Sprachkenntnisse"
+      locale:
+        one: "Sprache"
+        other: "Sprachen"
+      magic_locales_language:
+        one: "Sprachkenntniss"
+        other: "Sprachkenntnisse"
+      magic_locales_locale:
+        one: "Sprache"
+        other: "Sprachen"
+

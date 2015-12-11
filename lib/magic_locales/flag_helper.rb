@@ -5,7 +5,7 @@ module FlagHelper
   
   def magic_locaoles_admin_template(options = {}, &block)
     options.merge!(:body => capture(&block))
-    render(:partial => "magic_locaoles/admin_template", :locals => options)
+    render(:partial => "magic_locales/admin_template", :locals => options)
   end
   
   def flag( lcl = I18n.locale.to_s )

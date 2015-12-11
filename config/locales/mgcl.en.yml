@@ -1,0 +1,58 @@
+de:
+  helpers:
+    label:
+      language:
+        level: "Level"
+        owner: "Owner"
+        locale: "Locale"
+      locale:
+        name: "Name"
+        natural_name: "Natural"
+        iso_code: "ISO-Code"
+        locale_state: "State"
+      magic_locales_language:
+        level: "Level"
+        owner: "Owner"
+        locale: "Locale"
+      magic_locales_locale:
+        name: "Name"
+        natural_name: "Natural"
+        iso_code: "ISO-Code"
+        locale_state: "State"
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+    placeholder:
+      choose_language: "Choose language"
+      spoken_language:
+        choose_language: "Choose language"
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+  activemodel:
+    attributes:
+      language:
+        one: "Language"
+        other: "Languages"
+      locale:
+        one: "Locale"
+        other: "Locales"
+      magic_locales_language:
+        one: "Language"
+        other: "Languages"
+      magic_locales_locale:
+        one: "Locale"
+        other: "Locales"
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+  activerecord:
+    attributes:
+      language:
+        one: "Language"
+        other: "Languages"
+      locale:
+        one: "Locale"
+        other: "Locales"
+      magic_locales_language:
+        one: "Language"
+        other: "Languages"
+      magic_locales_locale:
+        one: "Locale"
+        other: "Locales"
