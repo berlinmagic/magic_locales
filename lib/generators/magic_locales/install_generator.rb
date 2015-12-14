@@ -21,13 +21,13 @@ module MagicLocales
         migration_template( "magic_logales_migration.rb", "db/migrate/add_magic_locales.rb" )
       end
       
-      def create_seeds_folder
-        empty_directory( "db/seeds" )
-      end
+      # => def create_seeds_folder
+      # =>   empty_directory( "db/seeds" )
+      # => end
       
       desc "add locale-seed file"
       def copy_country_seeds
-        copy_file( "locale_seeds.rb", "db/seeds/locales.rb" )
+        copy_file( "locale_seeds.rb", "db/seed_locales.rb" )
       end
       
       desc "add magic_logales initialitzer"
