@@ -32,7 +32,7 @@ class AddMagicLocales < ActiveRecord::Migration
     
     #
     ## seed default Locales
-    load "#{ Rails.root }/db/seeds/locales.rb"
+    load "#{ Rails.root }/db/seed_locales.rb"
     
     
   end
