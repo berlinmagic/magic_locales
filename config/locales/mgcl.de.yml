@@ -7,6 +7,8 @@ de:
     trigger: "Optionen"
     available: "Verfügbar"
     actions: "Aktionen"
+    choose_language: "Sprache wählen"
+    add_a_language: "Fremdsprache hinzufügen"
     availables:
       "true": "Ja"
       "false": "NEIN"
@@ -25,6 +27,20 @@ de:
         level: "Niveau"
         owner: "Besitzer"
         locale: "Sprache"
+        type:
+          native: "Muttersprache"
+          foreign: "Frendsprache"
+        levels:
+          basic: Grundkenntnisse
+          medium: Mittlere Kenntnisse
+          advanced: Gute Kenntnisse
+          excelent: Sehr gute Kenntnisse
+          native: Muttersprache
+        levels_description:
+          basic: einfache Anweisungen sollten verstanden werden
+          medium: einfache Unterhaltung auf Deutsch ist möglich
+          advanced: kaum Sprachbarrieren
+          excelent: Muttersprache oder keine Sprachbarrieren
       locale:
         name: "Name"
         natural_name: "Natürlich"
@@ -34,6 +50,20 @@ de:
         level: "Niveau"
         owner: "Besitzer"
         locale: "Sprache"
+        type:
+          native: "Muttersprache"
+          foreign: "Frendsprache"
+        levels:
+          basic: Grundkenntnisse
+          medium: Mittlere Kenntnisse
+          advanced: Gute Kenntnisse
+          excelent: Sehr gute Kenntnisse
+          native: Muttersprache
+        levels_description:
+          basic: einfache Anweisungen sollten verstanden werden
+          medium: einfache Unterhaltung auf Deutsch ist möglich
+          advanced: kaum Sprachbarrieren
+          excelent: Muttersprache oder keine Sprachbarrieren
       magic_locales_locale:
         name: "Name"
         natural_name: "Natürlich"
