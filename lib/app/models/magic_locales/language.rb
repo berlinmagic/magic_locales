@@ -9,7 +9,7 @@ class MagicLocales::Language < ActiveRecord::Base
   
   # =====> A S S O Z I A T I O N S <========================================================= #
   belongs_to :owner,    polymorphic: true
-  belongs_to :locale,   class_name: "Wizard::Locale",   foreign_key: :locale_id
+  belongs_to :locale,   class_name: "MagicLocales::Locale",   foreign_key: :locale_id
   
   
   # =====> A T T R I B U T E S <============================================================= #

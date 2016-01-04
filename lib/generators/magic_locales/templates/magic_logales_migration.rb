@@ -21,6 +21,7 @@ class AddMagicLocales < ActiveRecord::Migration
     ## (spoken) Languages
     create_table :mgclang_languages do |t|
       t.string        :level
+      t.boolean       :default,    default: false
       t.references    :owner,      polymorphic: true
       t.references    :locale
       t.timestamps
