@@ -26,6 +26,7 @@ module MagicLocales
         # send :include, InstanceMethods
         
         has_many  :spoken_languages, 
+                      -> { where.not(default: true) }, 
                       as:         :owner, 
                       class_name: "MagicLocales::Language", 
                       dependent: :destroy
