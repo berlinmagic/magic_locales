@@ -18,7 +18,7 @@ module MagicLocales
                       class_name: "MagicLocales::Language", 
                       dependent:  :destroy
         
-        accepts_nested_attributes_for :language,          allow_destroy: true,    reject_if: :all_blank
+        accepts_nested_attributes_for :language,          allow_destroy: true,    reject_if: proc { |atts| atts['locale_id'].blank? }
       end
       
       
@@ -43,7 +43,7 @@ module MagicLocales
                       class_name: "MagicLocales::Language", 
                       dependent:  :destroy
         
-        accepts_nested_attributes_for :spoken_languages,  allow_destroy: true,    reject_if: :all_blank
+        accepts_nested_attributes_for :spoken_languages,  allow_destroy: true,    reject_if: proc { |atts| atts['locale_id'].blank? }
       end
       
       
